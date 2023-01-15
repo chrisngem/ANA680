@@ -13,9 +13,9 @@ def index():
 
 @app.route('/predict', methods=['POST'])  # The user input is processed here
 def predict():
-    math score = request.form['math score']
-    reading score = request.form['reading score']
-    writing score = request.form['writing score']
+    'math score' = request.form['math score']
+    'reading score' = request.form['reading score']
+    'writing score' = request.form['writing score']
     pred = model.predict(np.array([['math score','reading score','writing score']]))
     print(pred)
     return render_template('index.html', predict=str(pred))
